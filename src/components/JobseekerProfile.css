@@ -1,0 +1,281 @@
+Profile Page Layout
+.w3-light-grey {
+  max-width: 1400px;
+  margin: 0 auto; /* Centers the container */
+  padding: 20px;
+}
+
+.w3-content {
+  margin-top: 20px;
+}
+
+.profile-card {
+  margin-top: 20px;
+  padding: 15px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 120px; /* Fixed width */
+  height: 120px; /* Fixed height to make it circular */
+  border-radius: 50%; /* Ensures the image is a circle */
+  border: 3px solid #ccc;
+  object-fit: cover; /* Ensures the image covers the circular area properly */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+.w3-container h2,
+.w3-container p {
+  margin: 5px 0;
+}
+
+/* Add Buttons */
+.w3-button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.w3-teal {
+  background-color: #009688;
+}
+
+.w3-button:hover {
+  background-color: #00796b;
+}
+
+/* Error Messages */
+.error-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffcccc;
+  color: #d8000c;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+/* Profile Sections */
+.w3-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensure left and right sections are spaced */
+}
+
+.w3-col {
+  margin-bottom: 20px;
+}
+
+.w3-col.w3-quarter {
+  width: 25%;
+  flex: 1 1 25%; /* Ensures the profile info section takes 25% of the available space */
+}
+
+.w3-col.w3-threequarter {
+  width: 70%; /* The right section for education and projects takes up 70% */
+  flex: 1 1 70%;
+}
+
+.w3-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.w3-opacity {
+  opacity: 0.7;
+}
+
+.w3-small {
+  font-size: 14px;
+}
+
+/* Skill Bar */
+.w3-light-grey {
+  background-color: #f1f1f1;
+}
+
+
+.w3-round-xlarge {
+  border-radius: 15px;
+}
+
+.w3-teal {
+  background-color: #009688;
+}
+
+.w3-small {
+  font-size: 14px;
+}
+
+.w3-center {
+  text-align: center;
+}
+
+/* Popup Form Styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.popup h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.popup label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.popup input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup button {
+  width: 100%;
+  padding: 12px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.popup button:hover {
+  background-color: #00796b;
+}
+
+.popup button.cancel {
+  background-color: #e0e0e0;
+  margin-top: 5px;
+}
+
+.popup button.cancel:hover {
+  background-color: #c5c5c5;
+}
+
+/* Add Padding & Spacing */
+.education-card,
+.project-card {
+  margin-bottom: 30px;
+  align-items: center;
+  
+}
+
+.education-item,
+.project-item {
+  margin-top: 20px;
+ 
+  padding:auto;
+  
+}
+
+.w3-opacity {
+  opacity: 0.8;
+}
+
+.w3-margin-right {
+  margin-right: 10px;
+}
+
+.w3-text-teal {
+  color: #009688 !important;
+}
+
+.w3-button {
+  display: inline-block;
+  background-color: #009688;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.w3-button:hover {
+  background-color: #00796b;
+}
+
+/* Additional Responsive Design */
+@media (max-width: 767px) {
+  .w3-row {
+    flex-direction: column;
+  }
+  
+  .w3-col {
+    width: 100%;
+  }
+
+  .profile-card {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .w3-col.w3-quarter {
+    width: 25%;
+  }
+
+  .w3-col.w3-threequarter {
+    width: 70%;
+  }
+}
+
+/* Compact Skill Bar */
+.w3-light-grey.w3-round-xlarge.w3-small {
+  margin-bottom: 1px; /* Reduce space between skills */
+   /* Make the skill bar more compact */
+}
+
+.w3-container.w3-center.w3-round-xlarge.w3-teal {
+  height: 100%; /* Ensure the skill bar maintains full height */
+}
+
+/* Compact Text */
+.skill-name {
+  font-size: 14px; /* Smaller font size for skill names */
+  margin-bottom: 1px; /* Reduce space between skill name and bar */
+}
+
+.skill-level {
+  font-size: 12px; /* Smaller font size for skill levels */
+  text-align: right;
+  margin-top: 1px; /* Adjust margin for level text */
+  color: #777; /* Slightly lighter color for level text */
+}
+
+/* Reduced padding and margins for skills */
+.w3-button {
+  margin-top: 10px; /* Adjust margin for buttons */
+  padding: 8px 12px; /* Adjust padding */
+}
