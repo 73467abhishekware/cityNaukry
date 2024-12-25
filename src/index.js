@@ -1,17 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// import React from "react";
+// import ReactDOM from "react-dom";
+// import { RouterProvider } from "react-router-dom";
+// import customRouter from "./components/Routing";
+
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <RouterProvider router={customRouter} />
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+
+
+
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import customRouter from "./components/Routing";
+import { SessionProvider } from "./components/SessionContext";
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <SessionProvider>
+      <RouterProvider router={customRouter} />
+    </SessionProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+// import React from "react";
+// import ReactDOM from "react-dom/client"; // Import createRoot from react-dom/client
+// import { RouterProvider } from "react-router-dom";
+// import customRouter from "./components/Routing";
+
+// // Create root using the new createRoot API
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// // Render the app using root.render() method
+// root.render(
+//   <React.StrictMode>
+//     <RouterProvider router={customRouter} />
+//   </React.StrictMode>
+// );
