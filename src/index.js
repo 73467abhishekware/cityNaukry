@@ -33,6 +33,7 @@ root.render(
   </React.StrictMode>
 );
 
+<<<<<<< HEAD
 
 
 // import React from "react";
@@ -49,3 +50,6 @@ root.render(
 //     <RouterProvider router={customRouter} />
 //   </React.StrictMode>
 // );
+=======
+reportWebVitals();
+>>>>>>> 016b116edce3deb7539e60e1fcdc254587982cde
