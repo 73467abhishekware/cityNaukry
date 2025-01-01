@@ -33,8 +33,11 @@ import AllCompanies from "./AllCompanies";
 import CompanyDetails from "./CompanyDetails";
 import JobPosts from "./JobPosts";
 import AllInterviews from "./AllInterviews";
+<<<<<<< HEAD
 import JobPostsNotApplied from "./JobPostsNotApplied";
 import PasswordReset from "./PasswordReset";
+=======
+>>>>>>> 56b4fad0bdd5606d24bd86c1aa0ddd3f7f8ddcd8
 
 const customRouter = createBrowserRouter([
   {

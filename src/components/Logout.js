@@ -10,7 +10,11 @@ const Logout = () => {
     alert("logging out");
     sessionStorage.clear(); // Clear the user data from sessionStorage
     sessionStorage.setItem("sessionActive", "false");
+<<<<<<< HEAD
     navigate('/signin'); 
+=======
+    navigate('/signin'); // Redirect to your login page
+>>>>>>> 56b4fad0bdd5606d24bd86c1aa0ddd3f7f8ddcd8
   };
 
   return (

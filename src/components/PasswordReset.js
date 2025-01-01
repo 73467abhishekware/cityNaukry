@@ -191,9 +191,8 @@
 // };
 
 // export default PasswordReset;
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useLocation, useNavigate } from 'react-router-dom';  // Updated for React Router v6
 
 const PasswordReset = () => {
   const [email, setEmail] = useState('');
@@ -204,20 +203,7 @@ const PasswordReset = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
 
-  // For handling URL params (like token)
-  const location = useLocation();
-  const navigate = useNavigate();  // Use useNavigate instead of useHistory
-
-  useEffect(() => {
-    // Extract the reset token from the URL query parameters
-    const params = new URLSearchParams(location.search);
-    const token = params.get('token');
-    if (token) {
-      setResetToken(token);  // Store the token in state
-    }
-  }, [location]);
-
-  // Handle forgot password request (sending the reset email)
+  // Handle forgot password request
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     setIsSendingEmail(true);
@@ -226,8 +212,8 @@ const PasswordReset = () => {
     try {
       const response = await axios.post('http://localhost:8086/jobSeeker/forgotPassword', null, {
         params: {
-          emailAddress: email,
-        },
+          emailAddress: email
+        }
       });
 
       setMessage(response.data.message || 'Password reset link has been sent.');
@@ -238,13 +224,13 @@ const PasswordReset = () => {
     }
   };
 
-  // Handle reset password request (using the reset token)
+  // Handle reset password request
   const handleResetPassword = async (e) => {
     e.preventDefault();
     setIsResetting(true);
     setMessage('');
 
-    // Check if passwords match
+    // Check if the passwords match
     if (newPassword !== confirmPassword) {
       setMessage('Passwords do not match.');
       setIsResetting(false);
@@ -254,18 +240,16 @@ const PasswordReset = () => {
     try {
       const response = await axios.post('http://localhost:8086/jobSeeker/resetPassword', null, {
         params: {
-          token: resetToken,  // Ensure the token is passed
+          token: resetToken,
           newPassword: newPassword,
-          confirmPassword: confirmPassword,
-        },
+          confirmPassword: confirmPassword
+        }
       });
 
       setMessage('Password reset successfully.');
       setIsResetting(false);
-      // Redirect to login page or another page after success
-      navigate('/login');  // Updated to use navigate
     } catch (error) {
-      // Handle error from backend (like invalid or expired token)
+      // Display error details if the token is invalid or expired
       if (error.response && error.response.data) {
         setMessage(error.response.data.errorDetails || 'Failed to reset password. Please check your token and try again.');
       } else {
@@ -306,7 +290,7 @@ const PasswordReset = () => {
             <input
               type="text"
               placeholder="Enter the reset token"
-              value={resetToken}  // Token will be pre-filled from the URL
+              value={resetToken}
               onChange={(e) => setResetToken(e.target.value)}
               required
             />

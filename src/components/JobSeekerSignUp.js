@@ -270,6 +270,7 @@ import { styled } from '@mui/material/styles';
 import { Person, Email, Lock, Phone, LocationOn, CameraAlt } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
+
 const Container = styled(Box)(({ theme }) => ({
   display: 'flex',
   minHeight: '100vh',
@@ -340,7 +341,9 @@ export default function JobSeekerSignUpPage() {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState('');
+
   const navigate = useNavigate(); 
+
 
   const handleNext = () => {
     if (step === 4) {
@@ -408,14 +411,11 @@ export default function JobSeekerSignUpPage() {
 
       setSuccess('Registration successful!');
       setLoading(false);
-      alert("register successfully")
-      navigate('/signin');
     } catch (error) {
       setLoading(false);
       console.error(error.response || error); // Log error to get more details
       setError('Something went wrong, please try again.');
     }
-    
   };
 
   return (
